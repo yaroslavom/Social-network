@@ -1,0 +1,9 @@
+.published_post img {
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid dimgray;
+}
+
+.published_post {
+    margin-top: 20px;
+}

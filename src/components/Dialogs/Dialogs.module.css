@@ -1,0 +1,8 @@
+.content_dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogs_items .active {
+    color:rgb(24, 188, 238);
+}

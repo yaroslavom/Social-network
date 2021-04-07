@@ -1,0 +1,16 @@
+.profile_background img {
+  border-radius: 10px;
+  border: 1px solid dimgray;
+}
+
+.profile_header {
+  display: flex;
+  align-items: center;
+  height: 150px;
+}
+
+.profile_ava img {
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid dimgray;
+}
