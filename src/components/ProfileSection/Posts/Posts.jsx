@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import Post from "./Post/Post";
 
 
@@ -8,14 +8,23 @@ const Posts = (props) => {
   // Create Posts Element, use PostsDate in props from index.js
   let postsEl = props.posts.map ( el => <Post message={el.message} likesCount={el.likesCount} />);
 
+  // Ref - допомагає зчитувати інформацію, коли це необхідно, але краще лише зчитувати і не змінювати її.
+  // У нашому випадку post має передатися в state, де будуть присвоюватися нові id, like, тому така функція потрубє змін.
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    let text = newPostElement.current.value;
+    alert(text);
+  }
+
   return (
     <div className="profile_posts">
       <div className="new-post">
         <div>
-          <textarea></textarea>
+          <textarea ref={newPostElement}></textarea>
         </div>
         <div>
-          <button role="submit">Publish</button>
+          <button onClick={addPost}>Publish</button>
         </div>
       </div>
       <div className="published">

@@ -5,10 +5,10 @@ import DialogItem from "./DialogItem/DialogItem";
 
 const Dialogs = (props) => {
   // Create Dialogs with Messages, use date in props from index.js
-  let messagesEl = props.messages.map((el) => (
+  let messagesEl = props.messagesPage.messages.map((el) => (
     <Message message={el.message} />
   ));
-  let dialogsEl = props.dialogs.map((el) => (
+  let dialogsEl = props.messagesPage.dialogs.map((el) => (
     <DialogItem name={el.name} id={el.id} />
   ));
  

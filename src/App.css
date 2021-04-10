@@ -8,6 +8,10 @@ html {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .background_gradient {
   background:linear-gradient(120deg, #ff7818f1, #af002cee 38%, #319097f1 66%);
 }
@@ -43,18 +47,18 @@ header .header_logo img {
   -webkit-backdrop-filter: blur( 9.0px );
   border-radius: 10px;
   border: 1px solid rgba(139, 159, 163, 0.548);
-  margin-top: 1%;
   padding: 5px 20px;
   grid-area: menu;
   box-shadow: inset 0 -2px 15px rgba(121, 120, 120, 0.33);
+  
 }
 
-.menu .menu_list {
+.menu ul {
   padding-inline-start: 0px;
   list-style: none;
 }
 
-.menu .menu_list li a {
+.menu li .hover_effect {
   color: #fff;
   font-size: 20px;
   line-height: 35px;
@@ -63,15 +67,26 @@ header .header_logo img {
   box-shadow: inset 0 -1px #8b9fa38c;
 }
 
-.menu .menu_list li a:hover {
+.menu li .hover_effect:hover  {
   box-shadow: inset 0 -1.5em rgba(29, 29, 29, 0.466);
   border: 1px solid #6b6b6b;
   border-radius: 5px;
   margin-left: -1px;
 }
 
-.menu .menu_list li a.active{
+.menu li a.active{
   color:rgb(0, 195, 255);
+}
+
+.menu .menu_friends li{
+  padding-top: 10px;
+  text-decoration: none;
+}
+
+.menu .menu_friends img{
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid dimgray;
 }
 
 .content {
