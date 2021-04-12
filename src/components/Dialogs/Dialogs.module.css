@@ -1,6 +1,7 @@
 .content_dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    grid-template-areas: "dialogs_items messages" "dialogs_items new_message";
     grid-gap: 10px;
 }
 
@@ -9,6 +10,7 @@
 }
 
 .dialogs_items {
+    grid-area: dialogs_items;
     background-color: rgba(29, 29, 29, 0.308);
     backdrop-filter: blur( 9.0px );
     -webkit-backdrop-filter: blur( 9.0px );
@@ -26,5 +28,9 @@
 }
 
 .messages {
+    grid-area: messages;
+}
 
+.new_message {
+    grid-area: new_message;
 }

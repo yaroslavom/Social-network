@@ -8,7 +8,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 const App = (props) => {
   return (
-    <BrowserRouter>
+
       <div className="background_gradient">
         <div className="wrapper">
           <Header />
@@ -16,12 +16,12 @@ const App = (props) => {
             <section className="content">
               <div className="content_wrapper">
                   <Route path='/dialogs' render={ () => < Dialogs messagesPage={props.state.messagesPage} />}/>
-                  <Route path='/profile' render={ () => < Profile profilePage={props.state.profilePage} />}/>
+                  <Route path='/profile' render={ () => < Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>}/>
               </div>
             </section>
         </div>
       </div>
-    </BrowserRouter>    
+   
   )
 } 
 

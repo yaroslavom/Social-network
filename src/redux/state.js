@@ -1,9 +1,14 @@
+let rerenderEntireTree = () => {
+  console.log("state changed");
+}
+
 let state = {
   profilePage: {
     posts: [
-      { id: 1, message: "Hi, how are you?", likesCount: 2 },
-      { id: 2, message: "It's my new post", likesCount: 17 },
+      { id: 2, message: "Hi, how are you?", likesCount: 2 },
+      { id: 1, message: "It's my new post", likesCount: 17 },
     ],
+    newPostText: ""
   },
   messagesPage: {
     messages: [
@@ -19,9 +24,30 @@ let state = {
       { name: "Yana", id: 5 },
       { name: "Dima", id: 6 },
       { name: "Egor", id: 7 },
-      { name: "Joshua", id: 8 },
+      { name: "Joshua", id: 8 }, 
     ],
   },
 };
+
+export const addPost = () => {
+  let newPost = {
+    id: 3,
+    message: state.profilePage.newPostText,
+    likesCount: 0
+  };
+  state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = ""
+  rerenderEntireTree(state);
+  
+}
+
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
+}
 
 export default state;
