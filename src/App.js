@@ -8,7 +8,6 @@ import { Route } from 'react-router-dom';
 
 const App = (props) => {
   return (
-
       <div className="background_gradient">
         <div className="wrapper">
           <Header />
