@@ -17,7 +17,7 @@ const Dialogs = (props) => {
     <div className={style.content_dialogs}>
       <div className={style.dialogs_items}>{ dialogsEl }</div>
       <div className={style.messages}>{ messagesEl }</div>
-      <SendMessage />
+      <SendMessage dispatch={props.dispatch} newMessageText={props.messagesPage.newMessageText}/>
     </div>
   );
 };

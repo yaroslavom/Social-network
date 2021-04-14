@@ -16,14 +16,14 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <a href="#" className="hover_effect">
+          <NavLink to="/news" className="hover_effect">
             News
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#" className="hover_effect">
+          <NavLink to="/settings" className="hover_effect">
             Settings
-          </a>
+          </NavLink>
         </li>
       </ul>
       <ul className="menu_friends">
