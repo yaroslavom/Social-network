@@ -1,6 +1,4 @@
 import React from "react";
-import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../redux/profile-reducer";
-
 import Post from "./Post/Post";
 
 const Posts = (props) => {
@@ -12,23 +10,23 @@ const Posts = (props) => {
   // У нашому випадку post має передатися в state, де будуть присвоюватися нові id, like, тому така функція потрубє змін.
   let newPostElement = React.createRef();
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    props.addPost()
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch(updateNewPostTextActionCreator(text));
+    props.updateNewPostText(text);
   }
-
+  debugger
   return (
     <div className="profile_posts">
       <div className="new-post">
         <div>
-          <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
+          <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
         </div>
         <div>
-          <button onClick={addPost}>Publish</button>
+          <button onClick={onAddPost}>Publish</button>
         </div>
       </div>
       <div className="published">
