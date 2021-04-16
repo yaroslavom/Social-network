@@ -22,7 +22,8 @@ a {
   grid-template-areas: 'header header' 'menu content';
   grid-gap: 10px;
   max-width: 100%;
-  padding: 1% 1%;
+  max-height: 100vh;
+  padding: 10px;
   margin: auto;
 }
 
@@ -43,6 +44,7 @@ header .header_logo img {
 
 .menu {
   background-color: rgba(29, 29, 29, 0.466);
+  overflow: auto;
   backdrop-filter: blur( 9.0px );
   -webkit-backdrop-filter: blur( 9.0px );
   border-radius: 10px;
@@ -91,6 +93,10 @@ header .header_logo img {
 
 .content {
   grid-area: content;
+  max-width: 100%;
+  height: calc(100vh - 95px);
+  overflow: auto;
+  padding: 20px;
   background: rgba(255, 255, 255, 0.534);
   box-shadow: 0 8px 32px 0 rgba(110, 110, 110, 0.651);
   border-radius: 10px;
@@ -99,6 +105,5 @@ header .header_logo img {
 }
 
 .content_wrapper {
-  padding: 20px;
   margin: 0 auto;
 }

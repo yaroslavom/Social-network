@@ -18,7 +18,7 @@ const Posts = (props) => {
     let text = newPostElement.current.value;
     props.updateNewPostText(text);
   }
-  debugger
+  
   return (
     <div className="profile_posts">
       <div className="new-post">

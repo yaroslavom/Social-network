@@ -7,10 +7,10 @@ const Dialogs = (props) => {
   let state = props.messagesPage;
 
   // Create Dialogs with Messages, use date in props from index.js
-  let messagesEl = state.messages.map((el) => <Message message={el.message} />);
-  let dialogsEl = state.dialogs.map((el) => 
-    <DialogItem name={el.name} id={el.id} />
-  );
+  let messagesEl = state.messages.map((el) => <Message message={el.message} key={el.id}/>);
+  let dialogsEl = state.dialogs.map((el) => (
+    <DialogItem name={el.name} key={el.id} id={el.id} />
+  ));
   let newMessageText = state.newMessageText;
 
   let onSendMessageClick = () => {
@@ -31,7 +31,7 @@ const Dialogs = (props) => {
           <textarea
             onChange={onMessageChange}
             value={newMessageText}
-            placeholder="enter your message" /* ref={newMessageElement} */
+            placeholder="enter your message"
           />
         </div>
         <div>

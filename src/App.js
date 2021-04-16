@@ -6,7 +6,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import Profile from "./components/ProfileSection/ProfileSection";
 import { Route } from "react-router-dom";
 
-const App = (props) => {
+const App = () => {
   return (
     <div className="background_gradient">
       <div className="wrapper">
@@ -14,14 +14,8 @@ const App = (props) => {
         <Navbar />
         <section className="content">
           <div className="content_wrapper">
-            <Route
-              path="/dialogs"
-              render={() => <DialogsContainer store={props.store} />}
-            />
-            <Route
-              path="/profile"
-              render={() => <Profile store={props.store} />}
-            />
+            <Route path="/dialogs" render={() => <DialogsContainer />} />
+            <Route path="/profile" render={() => <Profile />} />
           </div>
         </section>
       </div>
