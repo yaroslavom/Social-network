@@ -9,7 +9,7 @@ let initialState = {
   ]
 };
 
-const searchUsersReducer = (state = initialState, action) => {
+const UsersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FOLLOW: {
       return{
@@ -45,4 +45,4 @@ export const followAC = (userId) => ({ type: FOLLOW, userId });
 export const unFollowAC = (userId) => ({ type: UNFOLLOW, userId });
 export const setUsersAC = (users) => ({ type: SET_USERS, users });
 
-export default searchUsersReducer;
+export default UsersReducer;

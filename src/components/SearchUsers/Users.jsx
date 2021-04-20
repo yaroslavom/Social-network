@@ -1,10 +1,18 @@
+import * as axios from "axios";
 import React from "react";
-import style from "./SearchUsers.module.css"
+import style from "./Users.module.css";
+import userPhoto from "../../assets/image/user-logo.png"
 
-const SearchUsers = (props) => {
+const Users = (props) => {
 
+  let getUsers = () => {
+
+  
     if (props.users.length === 0) {
-    props.setUsers([
+      axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+        props.setUsers(response.data.items);
+      });
+    /* props.setUsers([
         {
             id: 2,
             photoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Dmitry_Nagiev_2017_4.jpg/274px-Dmitry_Nagiev_2017_4.jpg",
@@ -29,16 +37,18 @@ const SearchUsers = (props) => {
             status: "If you want to send me a message, use Instagram;)",
             location: { city: "Minsk", country: "Belarus" },
           },
-    ])
+    ]) */
     }
-
+  }
+  
   return (
     <div>
+      <button onClick={getUsers}>Get Users</button>
       {props.users.map((u) => (
         <div key={u.id}>
           <span>
             <div>
-              <img src={u.photoUrl} className={style.photoSize}/>
+              <img src={u.photos.small != null ? u.photos.small : userPhoto} className={style.photoSize}/>
             </div>
             <div>
               {u.followed 
@@ -48,12 +58,12 @@ const SearchUsers = (props) => {
           </span>
           <span>
             <span>
-              <div>{u.fullName}</div>
+              <div>{u.name}</div>
               <div>{u.status}</div>
             </span>
             <span>
-              <div>{u.location.country}</div>
-              <div>{u.location.city}</div>
+              <div>{"u.location.country"}</div>
+              <div>{"u.location.city"}</div>
             </span>
           </span>
         </div>
@@ -62,4 +72,4 @@ const SearchUsers = (props) => {
   );
 };
 
-export default SearchUsers;
+export default Users;

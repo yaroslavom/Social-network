@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { followAC, setUsersAC, unFollowAC } from "../../redux/searchUsers-reducer";
-import SearchUsers from "./SearchUsers";
+import { followAC, setUsersAC, unFollowAC } from "../../redux/Users-reducer";
+import Users from "./Users";
 
 let mapStateToProps = (state) => {
     return {
-        users: state.searchUsersPage.users
+        users: state.usersPage.users
     };
 }
 let mapDispatchToProps = (dispatch) => {
@@ -22,4 +22,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect (mapStateToProps, mapDispatchToProps)(SearchUsers);
+export default connect (mapStateToProps, mapDispatchToProps)(Users);
