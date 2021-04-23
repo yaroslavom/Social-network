@@ -1,7 +1,10 @@
 import React from "react";
+import Preloader from "../../common/Preloader/Preloader";
 import style from "./ProfileInfo.module.css"
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+  if(!props.profile) {return <Preloader/>}
+
   return (
     <div className={style.content}> 
         <div className={style.profile_background}>
@@ -10,11 +13,11 @@ const ProfileInfo = () => {
         <div className={style.profile_header}>
           <div className={style.profile_ava}>
             <img
-              src="https://www.freeiconspng.com/uploads/harley-davidson-logo-png-4.png"
+              src={props.profile.photos.large}
               alt="logo"
             />
           </div>
-          <div className={style.profile_name}>Profile Name</div>
+          <div className={style.profile_name}>{props.profile.fullName}</div>
         </div>
     </div>      
   );
