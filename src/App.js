@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header/Header";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import Navbar from "./components/Navbar/Navbar";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import ProfileContainer from "./components/ProfileSection/ProfileContainer";
@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="background_gradient">
       <div className="wrapper">
-        <Header />
+        <HeaderContainer/>
         <Navbar />
         <section className="content">
           <div className="content_wrapper">
@@ -24,5 +24,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;
